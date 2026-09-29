@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Booking Successful</title>
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <h1>🎉 Booking Successful!</h1>
+
+    <div class="success-container">
+
+        <div class="success-card">
+
+            <h2>🎟️ Ticket Booked Successfully</h2>
+
+            <p><strong>Customer Name:</strong> <%= booking.customerName %></p>
+
+            <p><strong>Email:</strong> <%= booking.customerEmail %></p>
+
+            <p><strong>Movie:</strong> <%= booking.movieName %></p>
+
+            <p><strong>Seat Number:</strong> <%= booking.seatNumber %></p>
+
+            <p><strong>Booking Date:</strong> <%= booking.bookingDate %></p>
+
+            <p><strong>Number of Tickets:</strong> <%= booking.numberOfTickets %></p>
+
+            <p class="thank-you">
+                🎬 Thank you for booking with us!
+            </p>
+            <a href="/" class="home-button">🎬 Book Another Ticket</a>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

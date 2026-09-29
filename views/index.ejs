@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Movie Ticket Booking</title>
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <h1>🎬 Movie Ticket Booking System</h1>
+
+    <p>Welcome to our Movie Ticket Booking System</p>
+
+    <h2>Book Your Movie Ticket</h2>
+
+    <form action="/book" method="POST">
+
+        <label>Customer Name:</label><br>
+        <input type="text" name="customerName" required>
+        <br><br>
+
+        <label>Email:</label><br>
+        <input type="email" name="customerEmail" required>
+        <br><br>
+
+        <label>Movie Name:</label><br>
+
+        <select name="movieName" required>
+            <option value="">Select Movie</option>
+
+            <% movies.forEach(movie => { %>
+                <option value="<%= movie.title %>">
+                    <%= movie.title %>
+                </option>
+            <% }) %>
+
+        </select>
+
+        <br><br>
+
+        <label>Seat Number:</label><br>
+        <input type="text" name="seatNumber" required>
+        <br><br>
+
+        <label>Booking Date:</label><br>
+        <input type="date" name="bookingDate" required>
+        <br><br>
+
+        <label>Number of Tickets:</label><br>
+        <input type="number" name="numberOfTickets" min="1" required>
+        <br><br>
+
+        <button type="submit">Book Ticket</button>
+
+    </form>
+
+    <h2>🎬 Available Movies</h2>
+
+    <div class="movies-container">
+
+        <% movies.forEach(movie => { %>
+
+            <div class="movie-card">
+
+                <% if (movie.title === "Avengers: Endgame") { %>
+                    <img src="/images/avengers.jpg" alt="Avengers">
+                <% } %>
+
+                <% if (movie.title === "Avatar: The Way of Water") { %>
+                    <img src="/images/avatar.jpg" alt="Avatar">
+                <% } %>
+
+                <% if (movie.title === "Interstellar") { %>
+                    <img src="/images/interstellar.jpg" alt="Interstellar">
+                <% } %>
+
+                <% if (movie.title === "Spider-Man: No Way Home") { %>
+                    <img src="/images/spider man.jpg" alt="Spider-Man">
+                <% } %>
+
+                <% if (movie.title === "3 Idiots") { %>
+                    <img src="/images/three.jpg" alt="3 Idiots">
+                <% } %>
+
+                <h3><%= movie.title %></h3>
+
+                <p>Genre: <%= movie.genre %></p>
+
+                <p>Language: <%= movie.language %></p>
+
+                <p>Duration: <%= movie.duration %></p>
+
+                <p>Price: ₹<%= movie.price %></p>
+
+            </div>
+
+        <% }) %>
+
+    </div>
+
+</body>
+</html>
